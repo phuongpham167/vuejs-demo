@@ -68,7 +68,16 @@
       <p>{{ answer }}</p>
     </div>
   
-  <div id = "hhi" v-bind:class="classObject" v-bind:style="styleObject">hih</div>
+  <div id = "hhi" v-bind:class="classObject" v-bind:style="styleObject">hih</div> 
+  <div id = "test2">
+        <div v-if="type === 'A'">A</div>
+        <div v-else-if="type === 'B'">B</div>
+        <div v-else-if="type === 'C'">C</div>
+        <div v-else-if="type === 'D'">D</div>
+        <div v-else>Chiến Sĩ không thể nhớ nổi</div>
+
+        <div v-show=" vs === 1">Test v-show</div>
+   </div>
   <script src="index.js"></script>
 
 </body>
