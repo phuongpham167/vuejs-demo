@@ -99,14 +99,14 @@ vm.$e1 === document.getElementById("example")
 
 
 //vong doi cua mot doi tuong
-new Vue({
-	data: {
-	  a: 1
-	},
-	created: function(){
-		console.log('gia tri cua a la: ' + this.a)
-	}
-})
+// new Vue({
+// 	data: {
+// 	  a: 1
+// 	},
+// 	created: function(){
+// 		console.log('gia tri cua a la: ' + this.a)
+// 	}
+// })
 
 
 //template sytax
@@ -162,5 +162,26 @@ var watchExampleVm = new Vue({
         	},
         	500
 		)
+	}
+})
+
+
+
+var test1 = new Vue({
+	el: "#hhi",
+	data: {
+	    isActive: false,
+		// error: null
+		styleObject: {
+			color: 'red',
+			fontSize: 40
+		}
+	},
+	computed: {
+		classObject: function(){
+			return {
+				active: this.isActive
+			}
+		}
 	}
 })
