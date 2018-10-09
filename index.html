@@ -9,6 +9,14 @@
   <div id = "app">
       {{message}}
   </div>
+  <div id = "app-2">
+      <!-- bind rang buoc cac thuoc tinh cua phan tu web-->
+      <!-- vi du bind thuoc tinh tieu de -->
+      <span v-bind:title = "message">
+          Hover your mouse over me for a few seconds
+          to see my dynamically bound title!
+      </span>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>
