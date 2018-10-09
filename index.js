@@ -66,3 +66,44 @@ var app7 = new Vue({
 		]
 	}
 })
+
+// doi tuong 
+
+//khoi tao 1 object data
+var data = { a: 1}
+//object data duoc truyen vao mot doi tuong Vue
+var vm = new Vue({
+	data: data
+})
+//truy xuat den thuoc tinh cua doi tuong vm.a
+//gia tri cua object data: data.a
+vm.a == data.a
+// khi thay doi thuoc tinh cua vm se anh huong den du lieu ban dau
+vm.b = "abc"
+
+var obj = {
+	foo: "bar"
+}
+
+//freeze ngan cho nhung thuoc tinh co san khong bi sua
+Object.freeze(obj)
+new Vue({
+	el: "#app-obj",
+	data: obj
+})
+
+//thuoc tinh va phuong thuc doi tuong( instance method va instance properties)
+//ki hieu la $
+vm.$data === data
+vm.$e1 === document.getElementById("example")
+
+
+//vong doi cua mot doi tuong
+new Vue({
+	data: {
+	  a: 1
+	},
+	created: function(){
+		console.log('gia tri cua a la: ' + this.a)
+	}
+})
