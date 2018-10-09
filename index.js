@@ -196,3 +196,44 @@ var test2 = new Vue({
 
 //v-show chi bat tat tinh nang dislay cua phan tu con n van render 
 //va co the nhin thay o dev-tool con v-if kiem tra that neu false n se k render ra nua
+
+Vue.component("todo-item", {
+	 template: '\
+    <li>\
+      {{ title }}\
+      <button v-on:click="$emit(\'remove\')">X</button>\
+    </li>\
+  ',
+  props: ['title']
+})
+
+new Vue({
+	el: "#todo-list-example",
+	data: {
+		newTodoText: "",
+		todos: [
+             {
+             	id: 1,
+             	title: 'luoc khoai',
+             },
+             {
+             	id: 2,
+             	title: 'cung chi gia gao',
+             },
+             {
+             	id: 3,
+             	title: 'nhp co vuon',
+             }
+		],
+		newTodoText: 5
+	},
+	methods: {
+		addNewTodo: function(){
+			this.todos.push({
+				id: this.newTodoId++,
+				title: this.newTodoText
+			})
+			this.newTodoText = ''
+		}
+	}
+})
