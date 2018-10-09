@@ -185,3 +185,14 @@ var test1 = new Vue({
 		}
 	}
 })
+
+var test2 = new Vue({
+	el: "#test2",
+	data: {
+		type: 'A',
+		vs: 0
+	}
+})
+
+//v-show chi bat tat tinh nang dislay cua phan tu con n van render 
+//va co the nhin thay o dev-tool con v-if kiem tra that neu false n se k render ra nua
