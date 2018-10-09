@@ -107,3 +107,60 @@ new Vue({
 		console.log('gia tri cua a la: ' + this.a)
 	}
 })
+
+
+//template sytax
+//
+//v-once: khong cap nhap lai du lieu khi thay doi
+//v-html: bien dich ra html thuan tuy
+//cu phap mustache: thong dich du lieu ra ban ban thuan tuy plain text
+
+
+//computed property
+var vm = new Vue({
+	el: "#example1",
+	data: {
+	  mess: "pham thi thu phuong"
+	},
+	computed: {
+		reverseMessage: function(){
+			return this.mess.split(' ').reverse().join(' ')
+		}
+	}
+})
+
+//watch => tuy bien giup phan ung lai thay doi du lieu
+var watchExampleVm = new Vue({
+	el: "#watch-example",
+	data: {
+		question: '',
+		answer: 'khong the tra loi cau hoi neu ban chua dat cau hoi!'
+	},
+	watch: {
+		//bat cu khi nao cau hoi thay doi ham ben duoi se chay
+		question: function(newQuestion, oldQuestion){
+			this.answer = 'Dang cho ban dat cau hoi xong...'
+			this.getAnswer()
+		}
+	},
+	methods: {
+		getAnswer: _.debounce(
+        	function(){
+        		if(this.question.indexOf('?') === -1){
+                	this.answer = 'Cau hoi phai chua dau cuoi cung la ?'
+                	return
+        		}
+        		this.answer = 'Dang suy nghi'
+        		var vm = this
+        		axios.get('https://yesno.wtf/api')
+        		  .then(function(response){
+        		  	  vm.answer = _.capitalize(response.data.answer)
+        		  })
+        		  .catch(function(error){
+        		  	vm.answer = "Loi khong the truy cap API"
+        		  })
+        	},
+        	500
+		)
+	}
+})
