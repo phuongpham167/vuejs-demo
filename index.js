@@ -41,3 +41,28 @@ var app5 = new Vue({
       }
     }
 })
+
+var app6 = new Vue({
+	el: "#app-6",
+	data: {
+		message: "Sua noi dung input nay"
+	}
+})
+
+// component
+Vue.component("todo-item", {
+  //prop: la mot thuoc tinh tuy bien
+  props: ["todo"],
+  template: "<li>{{ todo.text }} with id: {{ todo.id }}</li>" 
+})
+
+var app7 = new Vue({
+	el: "#app-7",
+	data: {
+		groceryList: [
+          { id: 0, text: "ca phao"},
+          { id: 1, text: "mam tom"},
+          { id: 2, text: "mien an duoc la duoc"},
+		]
+	}
+})
