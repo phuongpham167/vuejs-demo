@@ -237,3 +237,19 @@ new Vue({
 		}
 	}
 })
+
+var example1 = new Vue({
+	el: "#example-1",
+	data: {
+		counter: 0,
+		name: "Vue.js"
+	},
+	methods: {
+		greet: function(event){
+			alert("xin chao" + this.name + "!")
+			// if (event) {
+			// 	alert(event.target.tagName)
+			// }
+		}
+	}
+})
