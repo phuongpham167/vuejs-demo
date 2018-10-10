@@ -112,6 +112,27 @@
        <br>
        <textarea v-model="message" placeholder="Nhập văn bản có nhiều dòng"></textarea>
    </div>
+
+   <div id = "components-demo">
+       <button-counter></button-counter>
+       <button-counter></button-counter>
+       <button-counter></button-counter>
+   </div>
+
+   <div id = "demo-1">
+       <blog-post title = "Gioi thieu ve Vue"></blog-post>
+       <blog-post title = "Cac khai niem trong Vue"></blog-post>
+       <blog-post
+         v-for = "post in posts"
+         v-bind:key = "post.id"
+         v-bind:title = "post.title"
+       ></blog-post>
+   </div>
+   <div>
+    <alert-box>
+      Đã xảy ra cái gì gì đó.
+    </alert-box>     
+   </div>
   <script src="index.js"></script>
 </body>
 </html>

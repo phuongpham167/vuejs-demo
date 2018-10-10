@@ -254,3 +254,43 @@ var example1 = new Vue({
 	}
 })
 
+////////////
+//COMPONENT trong vue.js
+Vue.component('button-counter',{
+  
+  //luu y khi dinh nghia component
+  //data khong truyen la object maf la 1 ham function
+  data: function(){
+  	return{
+  		count: 0
+  	}
+  },
+  template: '<button v-on:click="count++"> Ban da bam {{ count }} lan.</button>'
+})
+new Vue({ el: '#components-demo' })
+
+Vue.component('blog-post',{
+  props: ['title'],
+  template: '<h3>{{ title }}</h3>'
+})
+
+new Vue({
+	el: '#demo-1',
+	data: {
+		posts: [
+          { id: 1, title: 'Gioi thieu Vue' },
+          { id: 2, title: 'Cac khai niem ve Vue' },
+          { id: 3, title: 'Vue can ban va nag cao' },
+		]
+	}
+})
+
+Vue.component('alert-box', {
+  //slot giup lay noi dung ben trong cua khai bao su dung component tuong tu noi dung ben trong the html
+  template: `
+    <div class="demo-alert-box">
+      <strong>Lỗi!</strong>
+      <slot></slot> 
+    </div>
+  `
+})
