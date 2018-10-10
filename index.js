@@ -294,3 +294,33 @@ Vue.component('alert-box', {
     </div>
   `
 })
+
+
+//DYNAMIC COMPONENT
+var tabs = [
+  {
+  	name: "Home",
+  	component: function(){
+  		template: "<p>Trang chu home</p>"
+  	}
+  },
+  {
+  	name: "Posts",
+  	component: function(){
+  		template: "<p>Nhung bai post</p>"
+  	}
+  },
+  {
+  	name: "About",
+  	component: function(){
+  		template: "<p>Contact Me</p>"
+  	}
+  }
+]
+new Vue({
+	el: '#dynamic-component-demo',
+	data:{
+		tabs: tabs,
+		currentTab: tabs[1]
+	}
+})
