@@ -102,7 +102,16 @@
        <p>{{ counter }} con cuu.</p>
        <button v-on:click="greet">Chao mung</button>
    </div>
+   <div>
+     <input v-model="mes" placeholder = "Nhap van ban">
+     <p>Thong diep: {{ mes }}</p>
+   </div>
+   <div>
+       <span>Thông điệp có nhiều dòng:</span>
+       <p style="white-space: pre-line;">{{ message }}</p>
+       <br>
+       <textarea v-model="message" placeholder="Nhập văn bản có nhiều dòng"></textarea>
+   </div>
   <script src="index.js"></script>
-
 </body>
 </html>

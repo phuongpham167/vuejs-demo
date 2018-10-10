@@ -253,3 +253,4 @@ var example1 = new Vue({
 		}
 	}
 })
+
